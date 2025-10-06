@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import LeadForm
 
+def home(request):
+    """Renders the home page as the site landing."""
+    return render(request, 'leads/home.html')
+
 def lead_capture(request):
     if request.method == 'POST':
         form = LeadForm(request.POST)
